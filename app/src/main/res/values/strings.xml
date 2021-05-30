@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">CubeBusters</string>
+    <string name="tech_support">Tech Support</string>
+    <string name="app_web">www.cubebusters.com</string>
+    <string name="nd_home">Home</string>
+    <string name="nd_calendar">Latest Releases</string>
+    <string name="nd_games">Films</string>
+    <string name="nd_merchandising">Merchandising</string>
+    <string name="nd_supportTitle">Techincal Support</string>
+    <string name="nd_contact">Contact us</string>
+    <string name="nd_help">Help</string>
+    <string name="nd_find_us">Where to find us</string>
+    <string name="nd_claim">Reclamasion</string>
+    <string name="nd_offer">Limited time offers</string>
+    <string name="nd_dvd">DVDs</string>
+    <string name="nd_blueray">BlueRays</string>
+    <string name="nd_cart">Shopping Cart</string>
+    <string name="nd_error_text">Error Text</string>
+
+    <string name="nd_contact_option">Please tell us why are you trying to get in contact with us</string>
+    <string name="business_inquiries">Business inquiries</string>
+    <string name="order_mishandled">Order mishandled</string>
+    <string name="form_instructions">Please fill out this form with your request</string>
+    <string name="place_holder">Write here…</string>
+    <string name="name">Name</string>
+    <string name="email">Email Subject</string>
+    <string name="request">Request</string>
+    <string name="send_email">Send Email</string>
+
+    <string name="home_tab">Home</string>
+    <string name="dvd_tab">DVD</string>
+    <string name="blueray_tab">BlueRay</string>
+    <string name="offers_tab">Offers</string>
+    <string name="latest_tab">Latest</string>
+
+    <string-array name="dvds">
+        <item>El Bueno, el Malo y el Feo</item>
+        <item>Tiburón</item>
+        <item>2001: Odisea en el espacio</item>
+    </string-array>
+    <string-array name="bluerays">
+        <item>Django desencadenado</item>
+        <item>Megalodon</item>
+        <item>Interestelar</item>
+    </string-array>
+    <string-array name="offers">
+        <item>Blade runner</item>
+        <item>Vengadores: Infinity War</item>
+        <item>Excalibur</item>
+    </string-array>
+    <string-array name="latest">
+        <item>Parasite</item>
+        <item>Godzilla vs Kong</item>
+        <item>Polizón</item>
+    </string-array>
+</resources>
