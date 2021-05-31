@@ -22,6 +22,8 @@ public class contactOption extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contact_option);
+        androidx.appcompat.widget.Toolbar tool = findViewById(R.id.toolbar);
+        setSupportActionBar(tool);
         this.errorDisplay = findViewById(R.id.radioErrorText);
         this.errorDisplay.setText("");
         Button addProductButton = findViewById(R.id.contactButton);

@@ -19,6 +19,7 @@
         <activity android:name=".contact.contactOption" />
         <activity android:name=".contact.orderClaim" />
         <activity android:name=".contact.request" />
+        <activity android:name=".contact.map" />
     </application>
 
 </manifest>

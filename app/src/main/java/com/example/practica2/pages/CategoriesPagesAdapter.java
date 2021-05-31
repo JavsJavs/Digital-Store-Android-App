@@ -44,7 +44,7 @@ public class CategoriesPagesAdapter extends FragmentPagerAdapter {
             case 4:
                 return new BluerayFragment();
             default:
-                return null;
+                return new HomeFragment();
         }
     }
 
