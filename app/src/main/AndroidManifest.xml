@@ -20,6 +20,7 @@
         <activity android:name=".contact.orderClaim" />
         <activity android:name=".contact.request" />
         <activity android:name=".contact.map" />
+        <activity android:name=".cart.ShoppingCart"/>
     </application>
 
 </manifest>

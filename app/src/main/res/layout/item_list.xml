@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/itemTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
@@ -15,9 +15,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="@string/sample_text"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toStartOf="@+id/itemImage"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,49 +27,72 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/sample_text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/itemTitle"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/itemTitle"
         app:layout_constraintTop_toBottomOf="@+id/itemTitle" />
 
-    <ImageView
-        android:id="@+id/itemImage"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/sample_text" />
-
-    <ImageView
-        android:id="@+id/itemOffer"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+    <TextView
+        android:id="@+id/itemPrice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
+        android:text="$"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/itemPrice"
-        app:layout_constraintTop_toBottomOf="@+id/itemTitle"
-        app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/sample_text" />
+        app:layout_constraintTop_toBottomOf="@+id/itemTitle" />
 
-    <ImageView
-        android:id="@+id/itemNew"
+    <TextView
+        android:id="@+id/itemBought"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/secondary_dark"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/primary_dark"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
         android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/itemOffer"
-        app:layout_constraintStart_toEndOf="@+id/itemOffer"
-        app:layout_constraintTop_toTopOf="@+id/itemOffer"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/sample_text" />
+        android:layout_height="44dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="@string/button_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="14sp"
+        android:backgroundTint="@color/secondary_light"
+        android:textColor="@color/primary_dark"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="40dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="@string/button_remove"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/itemBought"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="14sp"
+        android:backgroundTint="@color/secondary_light"
+        android:textColor="@color/primary_dark"
+        tools:targetApi="lollipop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

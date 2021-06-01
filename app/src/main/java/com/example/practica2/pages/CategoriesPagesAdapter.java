@@ -27,6 +27,7 @@ public class CategoriesPagesAdapter extends FragmentPagerAdapter {
         return 5;
     }
 
+    @NonNull
     @Override
     public Fragment getItem (int position)
     {

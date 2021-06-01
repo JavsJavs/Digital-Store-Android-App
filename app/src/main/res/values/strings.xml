@@ -1,5 +1,8 @@
 <resources>
     <string name="sample_text">Sample Text</string>
+    <string name="sample_text_long">Sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text sample text </string>
+    <string name="dollar">$</string>
+    <string name="sample_number">0</string>
 
     <string name="app_name">CubeBusters</string>
     <string name="tech_support">Tech Support</string>
@@ -18,6 +21,9 @@
     <string name="nd_blueray">BlueRays</string>
     <string name="nd_cart">Shopping Cart</string>
     <string name="nd_error_text">Error Text</string>
+
+    <string name="button_add">+1</string>
+    <string name="button_remove">-1</string>
 
     <string name="nd_contact_option">Please tell us why are you trying to get in contact with us</string>
     <string name="business_inquiries">Business inquiries</string>

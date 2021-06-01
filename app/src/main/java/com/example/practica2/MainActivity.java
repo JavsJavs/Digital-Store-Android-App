@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.practica2.cart.ShoppingCart;
 import com.example.practica2.contact.contactOption;
 import com.example.practica2.pages.CategoriesPagesAdapter;
 import com.google.android.material.navigation.NavigationView;
@@ -66,7 +67,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     {
         //
         if (item.getItemId() == R.id.action_open_cart) {
-            Log.d("HOLA", "HOLA MUNDO");
+            Intent intent = new Intent(this, ShoppingCart.class);
+            startActivity(intent);
             return true;
         }
         return false;
@@ -109,6 +111,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this.pager.setCurrentItem(4);
             break;
             case R.id.navigation_cart:
+                intent = new Intent(this, ShoppingCart.class);
+                startActivity(intent);
                 break;
             case R.id.navigation_help:
                 break;
