@@ -26,23 +26,23 @@ public class ShoppingCartFragment extends ListFragment {
         FilmDataHelper filmDbHelper = new FilmDataHelper(getContext());
         SQLiteDatabase db = filmDbHelper.getReadableDatabase();
         Cursor cursor = db.query("FILMS",
-                new String[] {"_id", "NAME"},
+                new String[] {"_id", "NAME", "PRICE", "BOUGHT"},
                 "bought > ?",
                 new String[] {"0"},
                 null,
                 null,
                 null);
         cursor.moveToFirst();
-        for(int i = 0; i < cursor.getCount(); i ++){
+        /*for(int i = 0; i < cursor.getCount(); i ++){
             Log.e("Ruben", cursor.getString(FilmDataHelper.filmTable.NAME));
             cursor.moveToNext();
-        }
+        }*/
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 getContext(),
-                android.R.layout.simple_list_item_1,
+                R.layout.item_list,
                 cursor,
-                new String[]{"NAME"},
-                new int[] {android.R.id.text1},
+                new String[]{"NAME", "PRICE", "BOUGHT"},
+                new int[] {R.id.itemTitle, R.id.itemPrice, R.id.itemBought},
                 0);
         setListAdapter(listAdapter);
         // Inflate the layout for this fragment

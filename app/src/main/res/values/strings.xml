@@ -27,6 +27,7 @@
     <string name="button_remove">-1</string>
     <string name="button_add_text">Add 1</string>
     <string name="button_remove_text">Remove 1</string>
+    <string name="buy">Buy</string>
 
     <string name="nd_contact_option">Please tell us why are you trying to get in contact with us</string>
     <string name="business_inquiries">Business inquiries</string>

@@ -43,13 +43,13 @@ public class FilmDataHelper extends SQLiteOpenHelper {
 
         addFilm(db, "Melende", "Melende", (float) 2.25, "dvd", 0, true, true, 1);
         addFilm(db, "Home Alone", "El nene se ha quedao en casa solo por navidad", (float) 0.25, "dvd", 0, false, false, 2);
-        addFilm(db, "The Boss Baby", "Recordatorio: no mirar esta pelicula en jordanio subtitulado al japones", (float) 2000000.00, "blueray", 0, false, false, 0);
-        addFilm(db, "Baby Driver", "Pues hay un coche rojo que da vueltas", (float) 19.50, "blueray", 0, false, true, 0);
-        addFilm(db, "Django desencadenado", "Un vaquero que mata esclavistas", (float) 12.25, "blueray", 0, false, true, 0);
-        addFilm(db, "Cuchi Cuchi Official Video", "Charo and the Salsoul orchestra", (float) 19.99, "dvd", 0, false, false, 0);
-        addFilm(db, "Parasite", "Koreanos haciendo cosas", (float) 20.00, "blueray", 0, true, false, 0);
-        addFilm(db, "Godzilla vs Kong", "Pues hay un gorila y un lagarto que se dan de ostias asi como ieepa suuumbaaa iupaaa", (float) 23.75, "blueray", 0, true, true, 0);
-        addFilm(db, "Titanic", "Hay un barco que va contra un ielo y se cae y se unde la gente un poco", (float) 5.00, "dvd", 0, true, true, 0);
+        addFilm(db, "The Boss Baby", "Recordatorio: no mirar esta pelicula en jordanio subtitulado al japones", (float) 2000000.00, "blueray", 0, false, false, 1);
+        addFilm(db, "Baby Driver", "Pues hay un coche rojo que da vueltas", (float) 19.50, "blueray", 0, false, true, 10);
+        addFilm(db, "Django desencadenado", "Un vaquero que mata esclavistas", (float) 12.25, "blueray", 0, false, true, 1);
+        addFilm(db, "Cuchi Cuchi Official Video", "Charo and the Salsoul orchestra", (float) 19.99, "dvd", 0, false, false, 01);
+        addFilm(db, "Parasite", "Koreanos haciendo cosas", (float) 20.00, "blueray", 0, true, false, 02);
+        addFilm(db, "Godzilla vs Kong", "Pues hay un gorila y un lagarto que se dan de ostias asi como ieepa suuumbaaa iupaaa", (float) 23.75, "blueray", 0, true, true, 3);
+        addFilm(db, "Titanic", "Hay un barco que va contra un ielo y se cae y se unde la gente un poco", (float) 5.00, "dvd", 0, true, true, 4);
         addFilm(db, "Arrival", "Aliens sordomudos en tu zona quieren conocerte", (float) 5.00, "dvd", 0, true, true, 0);
         addFilm(db, "Oxygen", "Esta no la he visto pero creo que va de respirar y acordarse de cosas", (float) 15.00, "dvd", 0, true, false, 0);
         addFilm(db, "Terminator", "No necesita descripcion osea es como un robot con escopetas", (float) 25.00, "blueray", 0, false, true, 0);
