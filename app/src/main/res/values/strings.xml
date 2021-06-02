@@ -6,6 +6,7 @@
 
     <string name="app_name">CubeBusters</string>
     <string name="tech_support">Tech Support</string>
+    <string name="favourite_films">We have your favourite films</string>
     <string name="app_web">www.cubebusters.com</string>
     <string name="nd_home">Home</string>
     <string name="nd_calendar">Latest Releases</string>
@@ -24,6 +25,8 @@
 
     <string name="button_add">+1</string>
     <string name="button_remove">-1</string>
+    <string name="button_add_text">Add 1</string>
+    <string name="button_remove_text">Remove 1</string>
 
     <string name="nd_contact_option">Please tell us why are you trying to get in contact with us</string>
     <string name="business_inquiries">Business inquiries</string>
@@ -61,4 +64,6 @@
         <item>Godzilla vs Kong</item>
         <item>Polizón</item>
     </string-array>
+
+    <string name="help_text">Mira yo que quieres que le haga si necesitas ayuda utilizando esta aplicacion de mentira pues quiere decir que soy un diseñador de interfaces pesimo. Espero que solo estes por aqui para ver que todo funciona. Y, efectivamente, no puedo poner tildes con el teclado con el que programo</string>
 </resources>

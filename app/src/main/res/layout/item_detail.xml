@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="4dp"
-                android:text="@string/tech_support"
+                android:text="@string/favourite_films"
                 android:textColor="@color/primary_dark"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -68,76 +68,163 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout6"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/constraintLayout5"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/itemDetailmage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:contentDescription="@string/sample_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/itemDetailTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:text="@string/sample_text"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toStartOf="@+id/itemDetailmage"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textSize="28sp"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/itemDetailPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            android:text="@string/sample_number"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/itemDetailTitle"
+            app:layout_constraintTop_toBottomOf="@+id/itemDetailTitle" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dollar"
-            app:layout_constraintBottom_toBottomOf="@+id/textView4"
-            app:layout_constraintStart_toEndOf="@+id/textView4"
-            app:layout_constraintTop_toTopOf="@+id/textView4" />
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/itemDetailPrice"
+            app:layout_constraintStart_toEndOf="@+id/itemDetailPrice"
+            app:layout_constraintTop_toTopOf="@+id/itemDetailPrice" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/itemDetailPlatform"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textView2" />
+            android:text="@string/sample_text"
+            app:layout_constraintBottom_toBottomOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="@+id/itemDetailTitle"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="@+id/textView5" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/itemDetailDescription"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Button"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="280dp" />
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="@string/sample_text_long"
+            app:layout_constraintEnd_toStartOf="@+id/itemDetailmage"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/itemDetailTitle"
+            app:layout_constraintTop_toBottomOf="@+id/itemDetailPrice" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/itemDetailmage"
+            app:layout_constraintStart_toStartOf="@+id/itemDetailmage"
+            app:layout_constraintTop_toBottomOf="@+id/itemDetailmage">
+
+            <ImageView
+                android:id="@+id/itemDetailOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:contentDescription="@string/sample_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/offer_black" />
+
+            <ImageView
+                android:id="@+id/itemDetailNew"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:contentDescription="@string/sample_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/watch_black" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/itemDetailBought"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:background="@color/secondary_dark"
+        android:gravity="center"
+        android:text="@string/sample_number"
+        android:textColor="@color/primary_dark"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6" />
+
+    <Button
+        android:id="@+id/itemDetailAdd"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/secondary_light"
+        android:gravity="center"
+        android:text="@string/button_remove_text"
+        android:textAlignment="center"
+        android:textColor="@color/primary_dark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemDetailBought"
+        app:layout_constraintEnd_toStartOf="@+id/itemDetailBought"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itemDetailBought"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:id="@+id/itemDetailRemove"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/secondary_light"
+        android:gravity="center"
+        android:text="@string/button_add_text"
+        android:textAlignment="center"
+        android:textColor="@color/primary_dark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemDetailBought"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/itemDetailBought"
+        app:layout_constraintTop_toTopOf="@+id/itemDetailBought"
+        tools:targetApi="lollipop" />
 </androidx.constraintlayout.widget.ConstraintLayout>

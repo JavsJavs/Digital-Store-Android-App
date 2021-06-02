@@ -1,6 +1,7 @@
 package com.example.practica2.pages;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -11,9 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.ListFragment;
 
 import com.example.practica2.R;
@@ -27,12 +30,22 @@ public class DvdFragment extends ListFragment {
     }
     private int prueba;
     private ImageView filmCover;
+    private Cursor cursor;
+    private SQLiteDatabase db;
+
+    /*Button addProductButton = findViewById(R.id.contactButton);
+        addProductButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                contactClick(v);
+            }
+        });*/
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         FilmDataHelper filmDbHelper = new FilmDataHelper(getContext());
-        SQLiteDatabase db = filmDbHelper.getReadableDatabase();
-        Cursor cursor = db.query("FILMS",
+        this.db = filmDbHelper.getReadableDatabase();
+        this.cursor = db.query("FILMS",
                 new String[] {"_id", "NAME", "PRICE", "BOUGHT"},
                 "platform = ?",
                 new String[] {"dvd"},
@@ -40,12 +53,14 @@ public class DvdFragment extends ListFragment {
                 null,
                 null);
         cursor.moveToFirst();
+
         /*
         for(int i = 0; i < cursor.getCount(); i ++){
             Log.e("Ruben", cursor.getString(FilmDataHelper.filmTable.NAME));
             cursor.moveToNext();
         }
         */
+
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 getContext(),
                 R.layout.item_list,
@@ -56,6 +71,30 @@ public class DvdFragment extends ListFragment {
         setListAdapter(listAdapter);
         // Inflate the layout for this fragment
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id)
+    {
+        Intent intent = new Intent(getActivity(), filmDetail.class);
+        SQLiteOpenHelper filmDbHelper = new FilmDataHelper(getContext()) ;
+        try
+        {
+            this.db = filmDbHelper.getReadableDatabase();
+            this.cursor = this.db.query("FILMS",
+                    new String[] {"_id"},
+                    null,
+                    null,
+                    null,
+                    null,
+                    null);
+            this.cursor.move(position+1);
+            intent.putExtra("FilmId", cursor.getString(0));
+            startActivity(intent);
+        }
+        catch (Exception e) {
+            Log.e("DvdFragment","Exception");
+        }
     }
 }
 

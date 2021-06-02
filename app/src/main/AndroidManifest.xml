@@ -21,6 +21,7 @@
         <activity android:name=".contact.request" />
         <activity android:name=".contact.map" />
         <activity android:name=".cart.ShoppingCart"/>
+        <activity android:name=".contact.help"/>
     </application>
 
 </manifest>

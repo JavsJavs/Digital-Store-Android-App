@@ -16,7 +16,8 @@ public class FilmDataHelper extends SQLiteOpenHelper {
         int PLATFORM = 4;
         int IMAGE_ID = 5;
         int IS_NEW = 6;
-        int OFFER = 7;
+        int BOUGHT = 7;
+        int OFFER = 8;
     };
 
     public FilmDataHelper(Context context) {
