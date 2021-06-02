@@ -74,11 +74,16 @@ public class request extends AppCompatActivity {
     }
 
     private void resetText(){
-        this.nameText.setHintTextColor(getResources().getColor(R.color.primary_light));
-        this.subjectText.setHintTextColor(getResources().getColor(R.color.primary_light));
-        this.requestText.setHintTextColor(getResources().getColor(R.color.primary_light));
+        this.nameText.setHintTextColor(getResources().getColor(R.color.primary_super_dark));
+        this.nameText.setHint("Write here…");
+        this.subjectText.setHintTextColor(getResources().getColor(R.color.primary_super_dark));
+        this.subjectText.setHint("Write here…");
+        this.requestText.setHintTextColor(getResources().getColor(R.color.primary_super_dark));
+        this.requestText.setHint("Write here…");
+        this.errorText.setText("");
     }
 
+    @SuppressLint("SetTextI18n")
     private void sendMail(View v){
         resetText();
         if(!checkError()) {
@@ -90,6 +95,7 @@ public class request extends AppCompatActivity {
             intent.putExtra(Intent.EXTRA_TEXT, String.valueOf(this.requestText.getText()) + "\n\n" + String.valueOf(this.nameText.getText()));
             startActivity(intent);
         }else{
+            this.errorText.setText("Please fill out every necessary field");
             Log.e("Contact Request", "Invalid form");
         }
     }

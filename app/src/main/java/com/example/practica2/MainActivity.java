@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import com.example.practica2.cart.ShoppingCart;
 import com.example.practica2.contact.contactOption;
 import com.example.practica2.contact.help;
+import com.example.practica2.contact.map;
 import com.example.practica2.pages.CategoriesPagesAdapter;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -124,6 +125,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
                 break;
             case R.id.navigation_find_us:
+                intent = new Intent(this, map.class);
+                startActivity(intent);
                 break;
         }
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);

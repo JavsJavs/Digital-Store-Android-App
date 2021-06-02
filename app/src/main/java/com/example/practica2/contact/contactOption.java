@@ -16,7 +16,6 @@ import com.example.practica2.R;
 
 public class contactOption extends AppCompatActivity {
     private TextView errorDisplay;
-    private TextView textLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +33,7 @@ public class contactOption extends AppCompatActivity {
             }
         });
 
-        this.textLogo = findViewById(R.id.cubeBusterLogoOption);
+        TextView textLogo = findViewById(R.id.cubeBusterLogoOption);
         textLogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
