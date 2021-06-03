@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -24,13 +25,11 @@ import com.example.practica2.database.FilmDataHelper;
 
 import java.util.Objects;
 
-public class DvdFragment extends ListFragment {
+public class DvdFragment extends ListFragment{
     public DvdFragment() {
         // Required empty public constructor
     }
 
-    private int prueba;
-    private ImageView filmCover;
     private Cursor cursor;
     private SQLiteDatabase db;
 
@@ -54,14 +53,12 @@ public class DvdFragment extends ListFragment {
                 null,
                 null);
         cursor.moveToFirst();
-
         /*
         for(int i = 0; i < cursor.getCount(); i ++){
             Log.e("Ruben", cursor.getString(FilmDataHelper.filmTable.NAME));
             cursor.moveToNext();
         }
         */
-
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 getContext(),
                 R.layout.item_list,
@@ -76,6 +73,8 @@ public class DvdFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
+        Log.e("DvdFragment", "item clicked");
+        super.onListItemClick(l, v, position, id);
         Intent intent = new Intent(getActivity(), filmDetail.class);
         SQLiteOpenHelper filmDbHelper = new FilmDataHelper(getContext());
         try {

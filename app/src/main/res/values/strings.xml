@@ -53,6 +53,11 @@
     <string name="offers_tab">Offers</string>
     <string name="latest_tab">Latest</string>
 
+    <string name="home_title">Welcome to CubeBusters!</string>
+    <string name="home_slide">Slide to the right to see the best selection of films you could ever hope for</string>
+    <string name="home_got">We\'ve also got the latest releases and some unique offers you shouldn\'t let by</string>
+    <string name="home_help">If you need any help whatsoever, press the stack of three bars on the top left corner of your screen, you should find some helping options on the side menu.</string>
+
     <string-array name="dvds">
         <item>El Bueno, el Malo y el Feo</item>
         <item>Tiburón</item>

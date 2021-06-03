@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemListElement"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:clickable="true">
 
     <TextView
         android:id="@+id/itemTitle"
@@ -19,7 +20,8 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="true" />
 
     <TextView
         android:id="@+id/itemPrice"
@@ -34,7 +36,8 @@
         app:layout_constraintEnd_toEndOf="@+id/itemTitle"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/itemTitle"
-        app:layout_constraintTop_toBottomOf="@+id/itemTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/itemTitle"
+        android:clickable="true" />
 
     <TextView
         android:id="@+id/itemPrice2"
@@ -45,7 +48,8 @@
         android:text="@string/dollar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/itemPrice"
-        app:layout_constraintTop_toBottomOf="@+id/itemTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/itemTitle"
+        android:clickable="true" />
 
     <Button
         android:id="@+id/button"
