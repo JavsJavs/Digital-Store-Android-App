@@ -4,51 +4,42 @@
         <item
             android:id="@+id/navigation_home"
             android:icon="@drawable/home_black"
-            android:title="@string/nd_home"
-            />
+            android:title="@string/nd_home" />
         <item
             android:id="@+id/navigation_cart"
             android:icon="@drawable/shopping_cart_black"
-            android:title="@string/nd_cart"
-            />
+            android:title="@string/nd_cart" />
         <item
             android:id="@+id/navigation_offer"
             android:icon="@drawable/offer_black"
-            android:title="@string/nd_offer"
-            />
+            android:title="@string/nd_offer" />
         <item
             android:id="@+id/navigation_calendar"
             android:icon="@drawable/watch_black"
-            android:title="@string/nd_calendar"
-            />
+            android:title="@string/nd_calendar" />
         <item
             android:id="@+id/navigation_dvd"
             android:icon="@drawable/disc_black"
-            android:title="@string/nd_dvd"
-            />
+            android:title="@string/nd_dvd" />
         <item
             android:id="@+id/navigation_blueray"
             android:icon="@drawable/hd_black"
-            android:title="@string/nd_blueray"
-            />
+            android:title="@string/nd_blueray" />
     </group>
     <item android:title="@string/nd_supportTitle">
         <menu>
             <item
                 android:id="@+id/navigation_help"
                 android:icon="@drawable/help_black"
-                android:title="@string/nd_help"
-                />
+                android:title="@string/nd_help" />
             <item
                 android:id="@+id/navigation_contact"
                 android:icon="@drawable/email_black"
-                android:title="@string/nd_contact"
-                />
+                android:title="@string/nd_contact" />
             <item
                 android:id="@+id/navigation_find_us"
                 android:icon="@drawable/map_black"
-                android:title="@string/nd_find_us"
-                />
+                android:title="@string/nd_find_us" />
         </menu>
     </item>
 </menu>
