@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import com.example.practica2.MainActivity;
@@ -25,11 +23,9 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_map);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
         TextView textLogo = findViewById(R.id.cubeBusterLogoMap);
         textLogo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,14 +38,18 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        // Add a marker in Sydney and move the camera
         LatLng cubeBustersHq = new LatLng(40.538430, -3.893596);
-        mMap.addMarker(new MarkerOptions().position(cubeBustersHq).title("Cubebusters Headquarters"));
+        mMap.addMarker(new MarkerOptions().position(cubeBustersHq).title("CubeBusters Headquarters"));
         LatLng cubeBustersMobile = new LatLng(20, -40);
-        mMap.addMarker(new MarkerOptions().position(cubeBustersMobile).title("Cubebusters Mobile"));
+        mMap.addMarker(new MarkerOptions().position(cubeBustersMobile).title("CubeBusters Mobile"));
         LatLng cubeBustersAsia = new LatLng(69, 69);
-        mMap.addMarker(new MarkerOptions().position(cubeBustersAsia).title("Cubebusters Asia"));
-
+        mMap.addMarker(new MarkerOptions().position(cubeBustersAsia).title("CubeBusters Asia"));
+        LatLng cubeBustersAmerica = new LatLng(35, -80);
+        mMap.addMarker(new MarkerOptions().position(cubeBustersAmerica).title("CubeBusters America"));
+        LatLng cubeBustersAfrica = new LatLng(-20, 20);
+        mMap.addMarker(new MarkerOptions().position(cubeBustersAfrica).title("CubeBusters Africa"));
+        LatLng cubeBustersOceania = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(cubeBustersOceania).title("CubeBusters Oceania"));
         LatLng[] cubeBustersSmile = new LatLng[11];
         cubeBustersSmile[0] = new LatLng(-78.2, 62);
         cubeBustersSmile[1] = new LatLng(-79.4, 67);
@@ -62,16 +62,13 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
         cubeBustersSmile[8] = new LatLng(-78.2, 102);
         cubeBustersSmile[9] = new LatLng(-75, 72);
         cubeBustersSmile[10] = new LatLng(-75, 92);
-
-        for(int i = 0; i < 11; i++){
+        for (int i = 0; i < 11; i++) {
             mMap.addMarker(new MarkerOptions().position(cubeBustersSmile[i]));
         }
-
         mMap.moveCamera(CameraUpdateFactory.newLatLng(cubeBustersHq));
     }
 
-
-    private void homeClick(View v){
+    private void homeClick(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
