@@ -28,14 +28,22 @@
     <string name="button_add_text">Add 1</string>
     <string name="button_remove_text">Remove 1</string>
     <string name="buy">Buy</string>
+    <string name="pay_method">Payment Method</string>
+    
+    <string name="address">Address</string>
+    <string name="phone_number">Phone number</string>
+    <string name="visa">VISA</string>
+    <string name="master_card">MasterCard</string>
 
     <string name="nd_contact_option">Please tell us why are you trying to get in contact with us</string>
     <string name="business_inquiries">Business inquiries</string>
     <string name="order_mishandled">Order mishandled</string>
     <string name="form_instructions">Please fill out this form with your request</string>
+    <string name="cart_instructions">Please fill out this form with your billing information</string>
     <string name="place_holder">Write here…</string>
     <string name="name">Name</string>
     <string name="email">Email Subject</string>
+    <string name="mail">Email</string>
     <string name="request">Request</string>
     <string name="send_email">Send Email</string>
 

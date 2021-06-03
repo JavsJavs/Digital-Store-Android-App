@@ -53,21 +53,15 @@ public class request extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    private boolean checkError(){
+    private boolean checkForm(){
+        return checkError(this.nameText) || checkError(this.subjectText) || checkError(this.requestText);
+    }
+
+    private boolean checkError(EditText editText){
         boolean error = false;
-        if(String.valueOf(this.nameText.getText()).equals("")){
-            nameText.setHint("This field is required");
-            nameText.setHintTextColor(getResources().getColor(R.color.secondary_dark));
-            error = true;
-        }
-        if(String.valueOf(subjectText.getText()).equals("")){
-            subjectText.setHint("This field is required");
-            subjectText.setHintTextColor(getResources().getColor(R.color.secondary_dark));
-            error = true;
-        }
-        if("".equals(String.valueOf(requestText.getText()))){
-            requestText.setHint("This field is required");
-            requestText.setHintTextColor(getResources().getColor(R.color.secondary_dark));
+        if(String.valueOf(editText.getText()).equals("")){
+            editText.setHint("This field is required");
+            editText.setHintTextColor(getResources().getColor(R.color.secondary_dark));
             error = true;
         }
         return error;
@@ -86,7 +80,7 @@ public class request extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void sendMail(View v){
         resetText();
-        if(!checkError()) {
+        if(!checkForm()) {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
             //"tech_support@cubebusters.net"

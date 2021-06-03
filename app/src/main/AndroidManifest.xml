@@ -22,6 +22,7 @@
         <activity android:name=".contact.map" />
         <activity android:name=".cart.ShoppingCart"/>
         <activity android:name=".contact.help"/>
+        <activity android:name=".cart.ProcessCart"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
