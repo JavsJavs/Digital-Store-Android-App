@@ -84,7 +84,7 @@ public class request extends AppCompatActivity {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
             //"tech_support@cubebusters.net"
-            intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"tech_support@cubebusters.net"});
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"tech_support@cubebusters.net"});
             intent.putExtra(Intent.EXTRA_SUBJECT, String.valueOf(this.subjectText.getText()));
             intent.putExtra(Intent.EXTRA_TEXT, String.valueOf(this.requestText.getText()) + "\n\n" + String.valueOf(this.nameText.getText()));
             startActivity(intent);

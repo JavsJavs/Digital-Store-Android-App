@@ -8,7 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class FilmDataHelper extends SQLiteOpenHelper {
     private static final String DBNAME = "filmdb";
     private static final int DBVERSION = 1;
-    public interface filmTable{
+
+    public interface filmTable {
         int ID = 0;
         int NAME = 1;
         int DESC = 2;
@@ -18,11 +19,12 @@ public class FilmDataHelper extends SQLiteOpenHelper {
         int IS_NEW = 6;
         int BOUGHT = 7;
         int OFFER = 8;
-    };
+    }
 
     public FilmDataHelper(Context context) {
         super(context, DBNAME, null, DBVERSION);
     }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE FILMS ("
@@ -40,7 +42,6 @@ public class FilmDataHelper extends SQLiteOpenHelper {
         addFilm(db, "Home Alone", "El nene se ha quedao en casa solo por navidad", (float) 0.25, "dvd", 0, false, false);
         addFilm(db, "The Boss Baby", "HAHAHAHHAHA", (float) 2000000.00, "blueray", 0, false, false);
         addFilm(db, "Baby Driver", "Pues hay un coche rojo que da vueltas", (float) 19.50, "blueray", 0, false, true)*/
-
         addFilm(db, "Melende", "Melende", (float) 2.25, "dvd", 0, true, true, 1);
         addFilm(db, "Home Alone", "El nene se ha quedao en casa solo por navidad", (float) 0.25, "dvd", 0, false, false, 2);
         addFilm(db, "The Boss Baby", "Recordatorio: no mirar esta pelicula en jordanio subtitulado al japones", (float) 2000000.00, "blueray", 0, false, false, 1);
@@ -63,12 +64,12 @@ public class FilmDataHelper extends SQLiteOpenHelper {
         addFilm(db, "1917", "Ladescripcionvatodadeunatiradacomolapeliqueestamuyguay", (float) 21.00, "blueray", 0, true, true, 0);
         addFilm(db, "Knives out", "De las mejores pelis de misterio que han salido desde la de Sherlock Holmes con Tony Stark", (float) 14.00, "blueray", 0, false, false, 0);
     }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
 
-    public static void addFilm (SQLiteDatabase db, String name, String desc, float price, String platform, int imageID, boolean isNew, boolean offer, int bought)
-    {
+    public static void addFilm(SQLiteDatabase db, String name, String desc, float price, String platform, int imageID, boolean isNew, boolean offer, int bought) {
         ContentValues filmData = new ContentValues();
         filmData.put("NAME", name);
         filmData.put("DESCRIPTION", desc);
@@ -80,5 +81,4 @@ public class FilmDataHelper extends SQLiteOpenHelper {
         filmData.put("BOUGHT", bought);
         db.insert("FILMS", null, filmData);
     }
-
 }

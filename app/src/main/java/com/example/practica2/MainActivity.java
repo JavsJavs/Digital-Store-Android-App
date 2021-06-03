@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         //Toolbar---
         androidx.appcompat.widget.Toolbar tool = findViewById(R.id.toolbar);
         setSupportActionBar(tool);
@@ -52,21 +51,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         CategoriesPagesAdapter adapter = new CategoriesPagesAdapter(getSupportFragmentManager(), this);
         this.pager = findViewById(R.id.viewpager);
         pager.setAdapter(adapter);
-
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(pager);
     }
 
     @Override
-    public boolean onCreateOptionsMenu (Menu menu)
-    {
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu_mainactivity, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
-    public boolean onOptionsItemSelected (MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         //
         if (item.getItemId() == R.id.action_open_cart) {
             Intent intent = new Intent(this, ShoppingCart.class);
@@ -77,15 +73,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        if (drawerLayout.isDrawerOpen(GravityCompat.START))
-        {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else
-        {
+        } else {
             super.onBackPressed();
         }
     }
@@ -95,14 +87,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
         Intent intent;
-        switch (id)
-        {
+        switch (id) {
             case R.id.navigation_home:
                 this.pager.setCurrentItem(0);
                 break;
             case R.id.navigation_offer:
                 this.pager.setCurrentItem(1);
-            break;
+                break;
             case R.id.navigation_calendar:
                 this.pager.setCurrentItem(2);
                 break;
@@ -111,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.navigation_blueray:
                 this.pager.setCurrentItem(4);
-            break;
+                break;
             case R.id.navigation_cart:
                 intent = new Intent(this, ShoppingCart.class);
                 startActivity(intent);
@@ -133,5 +124,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
 }

@@ -20,7 +20,7 @@ public class filmDetail extends AppCompatActivity {
         setContentView(R.layout.item_detail);
 
         int id = Integer.parseInt(getIntent().getStringExtra("FilmId"));
-        SQLiteOpenHelper filmDbHelper = new FilmDataHelper(this) ;
+        SQLiteOpenHelper filmDbHelper = new FilmDataHelper(this);
         try {
             SQLiteDatabase db = filmDbHelper.getReadableDatabase();
             Cursor cursor = db.query("FILMS",
@@ -29,41 +29,38 @@ public class filmDetail extends AppCompatActivity {
                     new String[]{Integer.toString(id)},
                     null, null, null);
             cursor.moveToFirst();
-            ((TextView)findViewById(R.id.itemDetailTitle)).setText(cursor.getString(FilmDataHelper.filmTable.NAME));
-            ((TextView)findViewById(R.id.itemDetailDescription)).setText(cursor.getString(FilmDataHelper.filmTable.DESC));
-            ((TextView)findViewById(R.id.itemDetailPrice)).setText(cursor.getString(FilmDataHelper.filmTable.PRICE));
-            ((TextView)findViewById(R.id.itemDetailPlatform)).setText(cursor.getString(FilmDataHelper.filmTable.PLATFORM));
+            ((TextView) findViewById(R.id.itemDetailTitle)).setText(cursor.getString(FilmDataHelper.filmTable.NAME));
+            ((TextView) findViewById(R.id.itemDetailDescription)).setText(cursor.getString(FilmDataHelper.filmTable.DESC));
+            ((TextView) findViewById(R.id.itemDetailPrice)).setText(cursor.getString(FilmDataHelper.filmTable.PRICE));
+            ((TextView) findViewById(R.id.itemDetailPlatform)).setText(cursor.getString(FilmDataHelper.filmTable.PLATFORM));
 
             int imageId = cursor.getInt(FilmDataHelper.filmTable.IMAGE_ID);
             Log.e("filmDetail imId", String.valueOf(imageId));
-            if(imageId == 0){
-                ((ImageView)findViewById(R.id.itemDetailmage)).setImageResource(getResources().getIdentifier("default_white", "drawable", getPackageName()));
-            }else{
-                ((ImageView)findViewById(R.id.itemDetailmage)).setImageResource(cursor.getInt(FilmDataHelper.filmTable.IMAGE_ID));
+            if (imageId == 0) {
+                ((ImageView) findViewById(R.id.itemDetailmage)).setImageResource(getResources().getIdentifier("default_white", "drawable", getPackageName()));
+            } else {
+                ((ImageView) findViewById(R.id.itemDetailmage)).setImageResource(cursor.getInt(FilmDataHelper.filmTable.IMAGE_ID));
             }
 
             int isNew = cursor.getInt(FilmDataHelper.filmTable.IS_NEW);
             Log.e("filmDetail isNew", String.valueOf(isNew));
-            if(isNew == 0){
-                ((ImageView)findViewById(R.id.itemDetailNew)).setImageResource(getResources().getIdentifier("watch_black", "drawable", getPackageName()));
-            }else{
-                ((ImageView)findViewById(R.id.itemDetailNew)).setImageResource(getResources().getIdentifier("watch_white", "drawable", getPackageName()));
+            if (isNew == 0) {
+                ((ImageView) findViewById(R.id.itemDetailNew)).setImageResource(getResources().getIdentifier("watch_black", "drawable", getPackageName()));
+            } else {
+                ((ImageView) findViewById(R.id.itemDetailNew)).setImageResource(getResources().getIdentifier("watch_white", "drawable", getPackageName()));
             }
-
             int isOffer = cursor.getInt(FilmDataHelper.filmTable.OFFER);
             Log.e("filmDetail isOf", String.valueOf(isOffer));
-            if(isOffer == 0){
-                ((ImageView)findViewById(R.id.itemDetailOffer)).setImageResource(getResources().getIdentifier("offer_black", "drawable", getPackageName()));
-            }else{
-                ((ImageView)findViewById(R.id.itemDetailOffer)).setImageResource(getResources().getIdentifier("offer_white", "drawable", getPackageName()));
+            if (isOffer == 0) {
+                ((ImageView) findViewById(R.id.itemDetailOffer)).setImageResource(getResources().getIdentifier("offer_black", "drawable", getPackageName()));
+            } else {
+                ((ImageView) findViewById(R.id.itemDetailOffer)).setImageResource(getResources().getIdentifier("offer_white", "drawable", getPackageName()));
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
         }
 
     }
 }
-
 /*db.execSQL("CREATE TABLE FILMS ("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "NAME TEXT, "

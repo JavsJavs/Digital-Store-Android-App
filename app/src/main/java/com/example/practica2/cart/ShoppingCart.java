@@ -18,7 +18,6 @@ public class ShoppingCart extends AppCompatActivity {
         setContentView(R.layout.main_cart);
         ShoppingCartFragment shoppingCartFragment = (ShoppingCartFragment) getSupportFragmentManager().findFragmentById(R.id.shoppingCartFragment);
         assert shoppingCartFragment != null;
-
         TextView textLogo = findViewById(R.id.cubeBusterLogoCart);
         textLogo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,12 +35,12 @@ public class ShoppingCart extends AppCompatActivity {
         });
     }
 
-    private void homeClick(View v){
+    private void homeClick(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
-    private void buyClick(View v){
+    private void buyClick(View v) {
         Intent intent = new Intent(this, ProcessCart.class);
         startActivity(intent);
     }

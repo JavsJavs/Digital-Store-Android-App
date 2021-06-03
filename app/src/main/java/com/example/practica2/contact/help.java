@@ -16,7 +16,6 @@ public class help extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_help);
-
         TextView textLogo = findViewById(R.id.cubeBusterLogoHelp);
         textLogo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,7 +25,7 @@ public class help extends AppCompatActivity {
         });
     }
 
-    private void homeClick(View v){
+    private void homeClick(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

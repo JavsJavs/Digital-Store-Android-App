@@ -28,6 +28,7 @@ public class DvdFragment extends ListFragment {
     public DvdFragment() {
         // Required empty public constructor
     }
+
     private int prueba;
     private ImageView filmCover;
     private Cursor cursor;
@@ -46,9 +47,9 @@ public class DvdFragment extends ListFragment {
         FilmDataHelper filmDbHelper = new FilmDataHelper(getContext());
         this.db = filmDbHelper.getReadableDatabase();
         this.cursor = db.query("FILMS",
-                new String[] {"_id", "NAME", "PRICE", "BOUGHT"},
+                new String[]{"_id", "NAME", "PRICE", "BOUGHT"},
                 "platform = ?",
-                new String[] {"dvd"},
+                new String[]{"dvd"},
                 null,
                 null,
                 null);
@@ -66,7 +67,7 @@ public class DvdFragment extends ListFragment {
                 R.layout.item_list,
                 cursor,
                 new String[]{"NAME", "PRICE", "BOUGHT"},
-                new int[] {R.id.itemTitle, R.id.itemPrice, R.id.itemBought},
+                new int[]{R.id.itemTitle, R.id.itemPrice, R.id.itemBought},
                 0);
         setListAdapter(listAdapter);
         // Inflate the layout for this fragment
@@ -74,26 +75,23 @@ public class DvdFragment extends ListFragment {
     }
 
     @Override
-    public void onListItemClick(ListView l, View v, int position, long id)
-    {
+    public void onListItemClick(ListView l, View v, int position, long id) {
         Intent intent = new Intent(getActivity(), filmDetail.class);
-        SQLiteOpenHelper filmDbHelper = new FilmDataHelper(getContext()) ;
-        try
-        {
+        SQLiteOpenHelper filmDbHelper = new FilmDataHelper(getContext());
+        try {
             this.db = filmDbHelper.getReadableDatabase();
             this.cursor = this.db.query("FILMS",
-                    new String[] {"_id"},
+                    new String[]{"_id"},
                     null,
                     null,
                     null,
                     null,
                     null);
-            this.cursor.move(position+1);
+            this.cursor.move(position + 1);
             intent.putExtra("FilmId", cursor.getString(0));
             startActivity(intent);
-        }
-        catch (Exception e) {
-            Log.e("DvdFragment","Exception");
+        } catch (Exception e) {
+            Log.e("DvdFragment", "Exception");
         }
     }
 }

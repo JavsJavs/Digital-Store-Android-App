@@ -43,21 +43,20 @@ public class contactOption extends AppCompatActivity {
     }
 
     @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
-    private void contactClick(View v){
+    private void contactClick(View v) {
         RadioGroup group = findViewById(R.id.contactOptionGroup);
         int id = group.getCheckedRadioButtonId();
         Intent intent;
-        switch (id)
-        {
+        switch (id) {
             case R.id.businessRadio:
                 this.errorDisplay.setText("");
-                Log.e("Option","Request");
+                Log.e("Option", "Request");
                 intent = new Intent(this, request.class);
                 startActivity(intent);
                 break;
             case R.id.orderRadio:
                 this.errorDisplay.setText("");
-                Log.e("Option","Claim");
+                Log.e("Option", "Claim");
                 intent = new Intent(this, orderClaim.class);
                 startActivity(intent);
                 break;
@@ -68,7 +67,7 @@ public class contactOption extends AppCompatActivity {
         }
     }
 
-    private void homeClick(View v){
+    private void homeClick(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

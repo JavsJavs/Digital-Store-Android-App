@@ -15,25 +15,21 @@ import com.example.practica2.R;
 public class CategoriesPagesAdapter extends FragmentPagerAdapter {
     private Context m_context;
 
-    public CategoriesPagesAdapter(FragmentManager fragmentManager, Context context)
-    {
+    public CategoriesPagesAdapter(FragmentManager fragmentManager, Context context) {
         super(fragmentManager);
         this.m_context = context;
     }
 
     @Override
-    public int getCount ()
-    {
+    public int getCount() {
         return 5;
     }
 
     @NonNull
     @Override
-    public Fragment getItem (int position)
-    {
+    public Fragment getItem(int position) {
         Log.e("adios", String.valueOf(position));
-        switch (position)
-        {
+        switch (position) {
             case 0:
                 return new HomeFragment();
             case 1:
@@ -52,8 +48,7 @@ public class CategoriesPagesAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         Log.e("Hola", String.valueOf(position));
-        switch (position)
-        {
+        switch (position) {
             case 0:
                 return m_context.getResources().getText(R.string.home_tab);
             case 1:
