@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -122,7 +120,7 @@ public class ProcessCart extends AppCompatActivity {
         return "Your order (code " + orderCode + ") is being processed, and will be delivered to " + this.editAddressCart.getText() + " by the end of next month. Your payment method is " + paymentMethod + " and the billing address for this order is situated at " + this.editAddressCart.getText() + ", the total cost of the order is " + this.totalPrice + "$ US. If anything happens, we will get in contact with you using this phone number: '" + this.editPhoneCart.getText() + "' by SMS, and using this address '" + this.editEmailCart.getText() + "' by email.\n\nHappy watching,\n\nThe team at CubeBusters";
     }
 
-    private void wipeCart(){
+    private void wipeCart() {
         ContentValues filmValues = new ContentValues();
         filmValues.put("BOUGHT", 0);
         SQLiteOpenHelper filmDbHelper = new FilmDataHelper(this);
@@ -130,6 +128,6 @@ public class ProcessCart extends AppCompatActivity {
         db.update("FILMS",
                 filmValues,
                 "bought > ?",
-                new String[] {Integer.toString(0)});
+                new String[]{Integer.toString(0)});
     }
 }

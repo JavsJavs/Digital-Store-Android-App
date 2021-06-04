@@ -17,7 +17,7 @@ import androidx.fragment.app.ListFragment;
 import com.example.practica2.R;
 import com.example.practica2.database.FilmDataHelper;
 
-public class DvdFragment extends ListFragment{
+public class DvdFragment extends ListFragment {
     public DvdFragment() {
         // Required empty public constructor
     }
@@ -25,14 +25,6 @@ public class DvdFragment extends ListFragment{
     private LayoutInflater inflater;
     private ViewGroup container;
     private Bundle savedInstanceState;
-
-    /*Button addProductButton = findViewById(R.id.contactButton);
-        addProductButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                contactClick(v);
-            }
-        });*/
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,12 +41,6 @@ public class DvdFragment extends ListFragment{
                 null,
                 null);
         cursor.moveToFirst();
-        /*
-        for(int i = 0; i < cursor.getCount(); i ++){
-            Log.e("Ruben", cursor.getString(FilmDataHelper.filmTable.NAME));
-            cursor.moveToNext();
-        }
-        */
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 getContext(),
                 R.layout.item_list,
@@ -81,14 +67,3 @@ public class DvdFragment extends ListFragment{
         }
     }
 }
-
-/*db.execSQL("CREATE TABLE FILMS ("
-    + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-    + "NAME TEXT, "
-    + "DESCRIPTION TEXT, "
-    + "PRICE FLOAT, "
-    + "PLATFORM TEXT, "
-    + "IMAGE_ID INTEGER, "
-    + "IS_NEW BIT, "
-    + "BOUGHT INTEGER, "
-    + "OFFER BIT); ");*/

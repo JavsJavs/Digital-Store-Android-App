@@ -56,7 +56,7 @@ public class FilmDetail extends AppCompatActivity {
                 ((TextView) findViewById(R.id.itemDetailPlatform)).setText("BlueRay");
             String imageId = cursor.getString(FilmDataHelper.filmTable.IMAGE_ID);
             int imageIdSourced = getResources().getIdentifier(imageId, "drawable", getPackageName());
-            ImageView posterImage =  findViewById(R.id.itemDetailmage);
+            ImageView posterImage = findViewById(R.id.itemDetailmage);
             if (String.valueOf(imageIdSourced).equals("0")) {
                 posterImage.setImageResource(getResources().getIdentifier("default_white", "drawable", getPackageName()));
             } else {
@@ -108,12 +108,12 @@ public class FilmDetail extends AppCompatActivity {
     private void changeNumberFilm(int sign) {
         int nextItems;
         ContentValues filmValues = new ContentValues();
-        switch (sign){
+        switch (sign) {
             case 1:
                 nextItems = currentItems + 1;
                 break;
             case -1:
-                if(this.currentItems > 0)
+                if (this.currentItems > 0)
                     nextItems = currentItems - 1;
                 else
                     nextItems = 0;
@@ -127,13 +127,13 @@ public class FilmDetail extends AppCompatActivity {
         db.update("FILMS",
                 filmValues,
                 "_id = ?",
-                new String[] {Integer.toString(this.id)});
+                new String[]{Integer.toString(this.id)});
         this.currentItems = nextItems;
         updateItemsBought();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    private void updateItemsBought(){
+    private void updateItemsBought() {
         if (this.currentItems == 0) {
             this.removeFilmButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.primary_super_dark)));
             this.removeFilmButton.setClickable(false);
@@ -143,25 +143,21 @@ public class FilmDetail extends AppCompatActivity {
         }
         ((TextView) findViewById(R.id.itemDetailBought)).setText(String.valueOf(this.currentItems));
         updateTotalCost();
-        updateLists();
     }
 
     @SuppressLint("SetTextI18n")
-    private void updateTotalCost(){
+    private void updateTotalCost() {
         TextView totalText = findViewById(R.id.totalText);
         TextView totalNumber = findViewById(R.id.totalNumber);
         TextView totalDollar = findViewById(R.id.totalDollar);
-        if(this.currentItems > 0){
+        if (this.currentItems > 0) {
             totalText.setText("Total");
             totalNumber.setText(String.valueOf(this.price * this.currentItems));
             totalDollar.setText("$");
-        }else{
+        } else {
             totalText.setText("");
             totalNumber.setText("");
             totalDollar.setText("");
         }
-    }
-
-    private void updateLists(){
     }
 }

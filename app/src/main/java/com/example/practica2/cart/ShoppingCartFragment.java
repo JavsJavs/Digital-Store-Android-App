@@ -2,13 +2,10 @@ package com.example.practica2.cart;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.SimpleCursorAdapter;
 
 import androidx.annotation.NonNull;
@@ -34,10 +31,6 @@ public class ShoppingCartFragment extends ListFragment {
                 null,
                 null);
         cursor.moveToFirst();
-        /*for(int i = 0; i < cursor.getCount(); i ++){
-            Log.e("Ruben", cursor.getString(FilmDataHelper.filmTable.NAME));
-            cursor.moveToNext();
-        }*/
         SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(
                 getContext(),
                 R.layout.item_list,
