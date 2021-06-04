@@ -1,8 +1,12 @@
 package com.example.practica2.cart;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +17,9 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.practica2.MainActivity;
 import com.example.practica2.R;
+import com.example.practica2.database.FilmDataHelper;
 
 import java.util.Random;
 
@@ -45,6 +51,26 @@ public class ProcessCart extends AppCompatActivity {
                 processOrder(v);
             }
         });
+        Button homeButton = findViewById(R.id.cartHomeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        TextView textLogo = findViewById(R.id.cubeBusterLogoOrderCart);
+        textLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                homeClick(v);
+            }
+        });
+    }
+
+    private void homeClick(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     @SuppressLint({"SetTextI18n", "NonConstantResourceId"})
@@ -87,11 +113,23 @@ public class ProcessCart extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{String.valueOf(this.editEmailCart.getText())});
         intent.putExtra(Intent.EXTRA_SUBJECT, new String[]{"Billing information"});
         intent.putExtra(Intent.EXTRA_TEXT, emailBodyBuilder(paymentMethod));
+        wipeCart();
         startActivity(intent);
     }
 
     private String emailBodyBuilder(String paymentMethod) {
         final int orderCode = new Random().nextInt(999) + 8000;
         return "Your order (code " + orderCode + ") is being processed, and will be delivered to " + this.editAddressCart.getText() + " by the end of next month. Your payment method is " + paymentMethod + " and the billing address for this order is situated at " + this.editAddressCart.getText() + ", the total cost of the order is " + this.totalPrice + "$ US. If anything happens, we will get in contact with you using this phone number: '" + this.editPhoneCart.getText() + "' by SMS, and using this address '" + this.editEmailCart.getText() + "' by email.\n\nHappy watching,\n\nThe team at CubeBusters";
+    }
+
+    private void wipeCart(){
+        ContentValues filmValues = new ContentValues();
+        filmValues.put("BOUGHT", 0);
+        SQLiteOpenHelper filmDbHelper = new FilmDataHelper(this);
+        SQLiteDatabase db = filmDbHelper.getReadableDatabase();
+        db.update("FILMS",
+                filmValues,
+                "bought > ?",
+                new String[] {Integer.toString(0)});
     }
 }

@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.practica2.MainActivity;
 import com.example.practica2.R;
 
 import java.io.ByteArrayOutputStream;
@@ -73,12 +74,19 @@ public class OrderClaim extends AppCompatActivity {
         addCameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ContextCompat.checkSelfPermission(OrderClaim.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(OrderClaim.this, new String[]{Manifest.permission.CAMERA}, 100);
+                }
                 addCameraImage(v);
             }
         });
-        if (ContextCompat.checkSelfPermission(OrderClaim.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(OrderClaim.this, new String[]{Manifest.permission.CAMERA}, 100);
-        }
+        TextView textLogo = findViewById(R.id.cubeBusterLogoClaim);
+        textLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                homeClick(v);
+            }
+        });
     }
 
     @SuppressLint("SetTextI18n")
@@ -169,5 +177,10 @@ public class OrderClaim extends AppCompatActivity {
             error = true;
         }
         return error;
+    }
+
+    private void homeClick(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

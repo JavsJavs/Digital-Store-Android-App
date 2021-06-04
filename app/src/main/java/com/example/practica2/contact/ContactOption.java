@@ -32,7 +32,6 @@ public class ContactOption extends AppCompatActivity {
                 contactClick(v);
             }
         });
-
         TextView textLogo = findViewById(R.id.cubeBusterLogoOption);
         textLogo.setOnClickListener(new View.OnClickListener() {
             @Override
