@@ -2,6 +2,7 @@ package com.example.practica2.pages;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -21,8 +22,6 @@ public class FilmDetail extends AppCompatActivity {
     private int currentItems;
     private int id;
     private float price;
-    private SQLiteDatabase db;
-    private FilmDataHelper filmDbHelper;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -30,10 +29,10 @@ public class FilmDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_detail);
         this.id = Integer.parseInt(getIntent().getStringExtra("FilmId"));
-        this.filmDbHelper = new FilmDataHelper(this);
+        FilmDataHelper filmDbHelper = new FilmDataHelper(this);
         try {
-            this.db = this.filmDbHelper.getReadableDatabase();
-            Cursor cursor = this.db.query("FILMS",
+            SQLiteDatabase db = filmDbHelper.getReadableDatabase();
+            Cursor cursor = db.query("FILMS",
                     new String[]{"_id", "NAME", "DESCRIPTION", "PRICE", "PLATFORM", "IMAGE_ID", "IS_NEW", "BOUGHT", "OFFER"},
                     "_id = ?",
                     new String[]{Integer.toString(id)},
@@ -50,22 +49,25 @@ public class FilmDetail extends AppCompatActivity {
                 ((TextView) findViewById(R.id.itemDetailPlatform)).setText("BlueRay");
             String imageId = cursor.getString(FilmDataHelper.filmTable.IMAGE_ID);
             int imageIdSourced = getResources().getIdentifier(imageId, "drawable", getPackageName());
+            ImageView posterImage =  findViewById(R.id.itemDetailmage);
             if (String.valueOf(imageIdSourced).equals("0")) {
-                ((ImageView) findViewById(R.id.itemDetailmage)).setImageResource(getResources().getIdentifier("default_white", "drawable", getPackageName()));
+                posterImage.setImageResource(getResources().getIdentifier("default_white", "drawable", getPackageName()));
             } else {
-                ((ImageView) findViewById(R.id.itemDetailmage)).setImageResource(imageIdSourced);
+                posterImage.setImageResource(imageIdSourced);
             }
             int isNew = cursor.getInt(FilmDataHelper.filmTable.IS_NEW);
+            ImageView newImage = findViewById(R.id.itemDetailNew);
             if (isNew == 0) {
-                ((ImageView) findViewById(R.id.itemDetailNew)).setImageResource(getResources().getIdentifier("watch_off", "drawable", getPackageName()));
+                newImage.setImageResource(getResources().getIdentifier("watch_off", "drawable", getPackageName()));
             } else {
-                ((ImageView) findViewById(R.id.itemDetailNew)).setImageResource(getResources().getIdentifier("watch_on", "drawable", getPackageName()));
+                newImage.setImageResource(getResources().getIdentifier("watch_on", "drawable", getPackageName()));
             }
             int isOffer = cursor.getInt(FilmDataHelper.filmTable.OFFER);
+            ImageView offerImage = findViewById(R.id.itemDetailOffer);
             if (isOffer == 0) {
-                ((ImageView) findViewById(R.id.itemDetailOffer)).setImageResource(getResources().getIdentifier("offer_off", "drawable", getPackageName()));
+                offerImage.setImageResource(getResources().getIdentifier("offer_off", "drawable", getPackageName()));
             } else {
-                ((ImageView) findViewById(R.id.itemDetailOffer)).setImageResource(getResources().getIdentifier("offer_on", "drawable", getPackageName()));
+                offerImage.setImageResource(getResources().getIdentifier("offer_on", "drawable", getPackageName()));
             }
         } catch (Exception e) {
             Log.e("filmDetail", "catched");
@@ -103,8 +105,6 @@ public class FilmDetail extends AppCompatActivity {
             default:
                 nextItems = currentItems;
         }
-        Log.e("filmDetail", "old number of items: " + String.valueOf(currentItems));
-        Log.e("filmDetail", "new number of items: " + String.valueOf(nextItems));
         filmValues.put("BOUGHT", nextItems);
         SQLiteOpenHelper filmDbHelper = new FilmDataHelper(this);
         SQLiteDatabase db = filmDbHelper.getReadableDatabase();
@@ -137,13 +137,3 @@ public class FilmDetail extends AppCompatActivity {
         }
     }
 }
-/*db.execSQL("CREATE TABLE FILMS ("
-                + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "NAME TEXT, "
-                + "DESCRIPTION TEXT, "
-                + "PRICE FLOAT, "
-                + "PLATFORM TEXT, "
-                + "IMAGE_ID INTEGER, "
-                + "IS_NEW BIT, "
-                + "BOUGHT INTEGER, "
-                + "OFFER BIT); ");*/
