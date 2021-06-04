@@ -54,6 +54,7 @@ public class ShoppingCart extends AppCompatActivity {
     private void buyClick(View v) {
         if(getPrice() > 0) {
             Intent intent = new Intent(this, ProcessCart.class);
+            intent.putExtra("total_price", String.valueOf(getPrice()));
             startActivity(intent);
         }
     }

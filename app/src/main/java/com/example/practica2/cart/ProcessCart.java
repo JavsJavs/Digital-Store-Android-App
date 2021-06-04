@@ -24,10 +24,12 @@ public class ProcessCart extends AppCompatActivity {
     private EditText editPhoneCart;
     private RadioGroup paymentRadio;
     private TextView errorText;
+    private float totalPrice;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.totalPrice = Float.parseFloat(getIntent().getStringExtra("total_price"));
         setContentView(R.layout.main_order);
         this.editNameCart = findViewById(R.id.editNameCart);
         this.editEmailCart = findViewById(R.id.editEmailCart);
@@ -90,6 +92,6 @@ public class ProcessCart extends AppCompatActivity {
 
     private String emailBodyBuilder(String paymentMethod) {
         final int orderCode = new Random().nextInt(999) + 8000;
-        return "Your order (code " + orderCode + ") is being processed, and will be delivered to " + this.editAddressCart.getText() + " by the end of next month. Your payment method is " + paymentMethod + " and the billing address for this order is situated at " + this.editAddressCart.getText() + ". If anything happens, we will get in contact with you using this phone number: '" + this.editPhoneCart.getText() + "' by SMS, and using this address '" + this.editEmailCart.getText() + "' by email.\n\nHappy watching,\n\nThe team at CubeBusters";
+        return "Your order (code " + orderCode + ") is being processed, and will be delivered to " + this.editAddressCart.getText() + " by the end of next month. Your payment method is " + paymentMethod + " and the billing address for this order is situated at " + this.editAddressCart.getText() + ", the total cost of the order is " + this.totalPrice + "$ US. If anything happens, we will get in contact with you using this phone number: '" + this.editPhoneCart.getText() + "' by SMS, and using this address '" + this.editEmailCart.getText() + "' by email.\n\nHappy watching,\n\nThe team at CubeBusters";
     }
 }

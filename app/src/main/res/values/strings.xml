@@ -35,6 +35,7 @@
     <string name="phone_number">Phone number</string>
     <string name="visa">VISA</string>
     <string name="master_card">MasterCard</string>
+    <string name="total_price">total_price</string>
 
     <string name="gallery">Gallery</string>
     <string name="camera">Camera</string>
