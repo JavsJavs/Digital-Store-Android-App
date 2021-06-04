@@ -27,6 +27,7 @@
         <activity android:name=".cart.ShoppingCart" />
         <activity android:name=".contact.help" />
         <activity android:name=".cart.ProcessCart" />
+        <activity android:name=".pages.filmDetail"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

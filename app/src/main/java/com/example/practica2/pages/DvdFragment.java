@@ -1,5 +1,6 @@
 package com.example.practica2.pages;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -79,6 +81,7 @@ public class DvdFragment extends ListFragment{
         SQLiteOpenHelper filmDbHelper = new FilmDataHelper(getContext());
         try {
             this.db = filmDbHelper.getReadableDatabase();
+            Log.e("DvdFragment", "1");
             this.cursor = this.db.query("FILMS",
                     new String[]{"_id"},
                     null,
@@ -87,7 +90,9 @@ public class DvdFragment extends ListFragment{
                     null,
                     null);
             this.cursor.move(position + 1);
+            Log.e("DvdFragment", "2");
             intent.putExtra("FilmId", cursor.getString(0));
+            Log.e("DvdFragment", "3");
             startActivity(intent);
         } catch (Exception e) {
             Log.e("DvdFragment", "Exception");
