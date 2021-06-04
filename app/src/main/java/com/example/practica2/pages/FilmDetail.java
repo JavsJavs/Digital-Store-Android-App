@@ -3,9 +3,11 @@ package com.example.practica2.pages;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.practica2.R;
@@ -22,7 +25,10 @@ public class FilmDetail extends AppCompatActivity {
     private int currentItems;
     private int id;
     private float price;
+    Button addFilmButton;
+    Button removeFilmButton;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("SetTextI18n")
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,9 +78,8 @@ public class FilmDetail extends AppCompatActivity {
         } catch (Exception e) {
             Log.e("filmDetail", "catched");
         }
-        updateItemsBought();
-        Button addFilmButton = findViewById(R.id.itemDetailAdd);
-        Button removeFilmButton = findViewById(R.id.itemDetailRemove);
+        this.addFilmButton = findViewById(R.id.itemDetailAdd);
+        this.removeFilmButton = findViewById(R.id.itemDetailRemove);
         addFilmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,8 +92,10 @@ public class FilmDetail extends AppCompatActivity {
                 changeNumberFilm(-1);
             }
         });
+        updateItemsBought();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void changeNumberFilm(int sign) {
         int nextItems;
         ContentValues filmValues = new ContentValues();
@@ -116,7 +123,15 @@ public class FilmDetail extends AppCompatActivity {
         updateItemsBought();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void updateItemsBought(){
+        if (this.currentItems == 0) {
+            this.removeFilmButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.primary_super_dark)));
+            this.removeFilmButton.setClickable(false);
+        } else {
+            this.removeFilmButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.secondary_light)));
+            this.removeFilmButton.setClickable(true);
+        }
         ((TextView) findViewById(R.id.itemDetailBought)).setText(String.valueOf(this.currentItems));
         updateTotalCost();
     }

@@ -28,6 +28,7 @@
     <string name="button_add_text">Add 1</string>
     <string name="button_remove_text">Remove 1</string>
     <string name="buy">Buy</string>
+    <string name="total">Total</string>
     <string name="pay_method">Payment Method</string>
 
     <string name="address">Address</string>
