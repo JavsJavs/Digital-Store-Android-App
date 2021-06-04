@@ -44,7 +44,7 @@ public class FilmDataHelper extends SQLiteOpenHelper {
         addFilm(db, "Baby Driver", "Pues hay un coche rojo que da vueltas", (float) 19.50, "blueray", 0, false, true)*/
         addFilm(db, "Melende", "Melende", (float) 2.25, "dvd", 0, true, true, 1);
         addFilm(db, "Home Alone", "El nene se ha quedao en casa solo por navidad", (float) 0.25, "dvd", 0, false, false, 2);
-        addFilm(db, "The Boss Baby", "Recordatorio: no mirar esta pelicula en jordanio subtitulado al japones", (float) 2000000.00, "blueray", 0, false, false, 1);
+        addFilm(db, "The Boss Baby", "Recordatorio: no mirar esta pelicula en jordano subtitulado al japones", (float) 2000000.00, "blueray", 0, false, false, 1);
         addFilm(db, "Baby Driver", "Pues hay un coche rojo que da vueltas", (float) 19.50, "blueray", 0, false, true, 10);
         addFilm(db, "Django desencadenado", "Un vaquero que mata esclavistas", (float) 12.25, "blueray", 0, false, true, 1);
         addFilm(db, "Cuchi Cuchi Official Video", "Charo and the Salsoul orchestra", (float) 19.99, "dvd", 0, false, false, 1);

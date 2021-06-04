@@ -35,6 +35,15 @@
     <string name="visa">VISA</string>
     <string name="master_card">MasterCard</string>
 
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="add_your_image">Add your image</string>
+
+    <string name="bill_id">Billing Id</string>
+    <string name="issue">Explain your issue</string>
+    <string name="add_image">Add image</string>
+    <string name="issue_subject">Issue Subject</string>
+
     <string name="nd_contact_option">Please tell us why are you trying to get in contact with us</string>
     <string name="business_inquiries">Business inquiries</string>
     <string name="order_mishandled">Order mishandled</string>

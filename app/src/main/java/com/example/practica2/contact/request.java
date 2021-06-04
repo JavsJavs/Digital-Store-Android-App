@@ -22,7 +22,6 @@ public class request extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        Log.e("Request","built");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contact_request);
         this.errorText = findViewById(R.id.requestErrorText);
@@ -30,8 +29,8 @@ public class request extends AppCompatActivity {
         this.nameText = findViewById(R.id.editName);
         this.subjectText = findViewById(R.id.editEmail);
         this.requestText = findViewById(R.id.editRequest);
-        Button addProductButton = findViewById(R.id.mailButton);
-        addProductButton.setOnClickListener(new View.OnClickListener() {
+        Button sendMailButton = findViewById(R.id.mailButton);
+        sendMailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendMail(v);
@@ -54,7 +53,7 @@ public class request extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     private boolean checkForm(){
-        return checkError(this.nameText) || checkError(this.subjectText) || checkError(this.requestText);
+        return checkError(this.nameText) || checkError(this.requestText) || checkError(this.subjectText) ;
     }
 
     private boolean checkError(EditText editText){

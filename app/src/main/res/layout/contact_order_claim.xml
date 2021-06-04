@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/cubeBusterLogoRequest"
+            android:id="@+id/cubeBusterLogoClaim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
@@ -59,6 +59,284 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/claimInstructions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginRight="64dp"
+            android:text="@string/form_instructions"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <TextView
+            android:id="@+id/claimErrorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/nd_error_text"
+            android:textColor="@color/secondary_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/claimInstructions"
+            app:layout_constraintTop_toBottomOf="@+id/claimInstructions" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/claimErrorText">
+
+            <TextView
+                android:id="@+id/nameTextClaim"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginEnd="64dp"
+                android:layout_marginRight="64dp"
+                android:text="@string/name"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editNameClaim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:backgroundTint="@color/primary_light"
+                android:ems="10"
+                android:hint="@string/place_holder"
+                android:inputType="textPersonName"
+                android:textColor="@color/primary_light"
+                android:textColorHint="@color/primary_super_dark"
+                app:layout_constraintStart_toStartOf="@+id/nameTextClaim"
+                app:layout_constraintTop_toBottomOf="@+id/nameTextClaim"
+                tools:ignore="LabelFor"
+                tools:targetApi="lollipop" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+            <TextView
+                android:id="@+id/emailTextClaim"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginEnd="64dp"
+                android:layout_marginRight="64dp"
+                android:text="@string/issue_subject"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editSubjectClaim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:backgroundTint="@color/primary_light"
+                android:ems="10"
+                android:hint="@string/place_holder"
+                android:inputType="text"
+                android:textColor="@color/primary_light"
+                android:textColorHint="@color/primary_super_dark"
+                app:layout_constraintStart_toStartOf="@+id/emailTextClaim"
+                app:layout_constraintTop_toBottomOf="@+id/emailTextClaim"
+                tools:ignore="LabelFor"
+                tools:targetApi="lollipop" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+            <TextView
+                android:id="@+id/billTextClaim"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginEnd="64dp"
+                android:layout_marginRight="64dp"
+                android:text="@string/bill_id"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editBillClaim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:backgroundTint="@color/primary_light"
+                android:ems="10"
+                android:hint="@string/place_holder"
+                android:inputType="number"
+                android:textColor="@color/primary_light"
+                android:textColorHint="@color/primary_super_dark"
+                app:layout_constraintStart_toStartOf="@+id/billTextClaim"
+                app:layout_constraintTop_toBottomOf="@+id/billTextClaim"
+                tools:ignore="LabelFor"
+                tools:targetApi="lollipop" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+            <TextView
+                android:id="@+id/issueTextClaim"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginEnd="64dp"
+                android:layout_marginRight="64dp"
+                android:text="@string/issue"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editIssueClaim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:backgroundTint="@color/primary_light"
+                android:ems="10"
+                android:hint="@string/place_holder"
+                android:inputType="text"
+                android:textColor="@color/primary_light"
+                android:textColorHint="@color/primary_super_dark"
+                app:layout_constraintStart_toStartOf="@+id/issueTextClaim"
+                app:layout_constraintTop_toBottomOf="@+id/issueTextClaim"
+                tools:ignore="LabelFor"
+                tools:targetApi="lollipop" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/userImage"
+            android:layout_width="110sp"
+            android:layout_height="110sp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:contentDescription="@string/sample_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
+            tools:srcCompat="@drawable/add_image" />
+
+        <Button
+            android:id="@+id/galleryButtonClaim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/secondary_light"
+            android:text="@string/gallery"
+            android:textColor="@color/primary_dark"
+            app:layout_constraintEnd_toStartOf="@+id/cameraButtonClaim"
+            app:layout_constraintStart_toEndOf="@+id/userImage"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
+            tools:targetApi="lollipop" />
+
+        <Button
+            android:id="@+id/cameraButtonClaim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:backgroundTint="@color/secondary_light"
+            android:text="@string/camera"
+            android:textColor="@color/primary_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
+            tools:targetApi="lollipop" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:backgroundTint="@color/primary_light"
+            app:layout_constraintBottom_toTopOf="@+id/mailButtonClaim"
+            app:layout_constraintEnd_toEndOf="@+id/cameraButtonClaim"
+            app:layout_constraintStart_toStartOf="@+id/galleryButtonClaim"
+            app:layout_constraintTop_toBottomOf="@+id/galleryButtonClaim"
+            tools:targetApi="lollipop" />
+
+        <Button
+            android:id="@+id/mailButtonClaim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/secondary_light"
+            android:text="@string/send_email"
+            android:textColor="@color/primary_dark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cameraButtonClaim"
+            app:layout_constraintStart_toStartOf="@+id/galleryButtonClaim"
+            app:layout_constraintVertical_bias="0.0"
+            tools:targetApi="lollipop" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_your_image"
+            app:layout_constraintBottom_toTopOf="@+id/galleryButtonClaim"
+            app:layout_constraintEnd_toEndOf="@+id/cameraButtonClaim"
+            app:layout_constraintStart_toStartOf="@+id/galleryButtonClaim"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
