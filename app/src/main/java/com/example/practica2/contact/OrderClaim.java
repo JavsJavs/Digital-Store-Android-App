@@ -8,7 +8,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -22,13 +21,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.practica2.MainActivity;
 import com.example.practica2.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-public class orderClaim extends AppCompatActivity {
+public class OrderClaim extends AppCompatActivity {
     private TextView errorText;
     private EditText nameText;
     private EditText subjectText;
@@ -78,8 +76,8 @@ public class orderClaim extends AppCompatActivity {
                 addCameraImage(v);
             }
         });
-        if (ContextCompat.checkSelfPermission(orderClaim.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(orderClaim.this, new String[]{Manifest.permission.CAMERA}, 100);
+        if (ContextCompat.checkSelfPermission(OrderClaim.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(OrderClaim.this, new String[]{Manifest.permission.CAMERA}, 100);
         }
     }
 

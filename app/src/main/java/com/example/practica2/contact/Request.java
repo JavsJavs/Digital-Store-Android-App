@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.practica2.MainActivity;
 import com.example.practica2.R;
 
-public class request extends AppCompatActivity {
+public class Request extends AppCompatActivity {
     private TextView errorText;
     private EditText nameText;
     private EditText subjectText;

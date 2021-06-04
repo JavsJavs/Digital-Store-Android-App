@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.practica2.MainActivity;
 import com.example.practica2.R;
 
-public class contactOption extends AppCompatActivity {
+public class ContactOption extends AppCompatActivity {
     private TextView errorDisplay;
 
     @Override
@@ -51,13 +51,13 @@ public class contactOption extends AppCompatActivity {
             case R.id.businessRadio:
                 this.errorDisplay.setText("");
                 Log.e("Option", "Request");
-                intent = new Intent(this, request.class);
+                intent = new Intent(this, Request.class);
                 startActivity(intent);
                 break;
             case R.id.orderRadio:
                 this.errorDisplay.setText("");
                 Log.e("Option", "Claim");
-                intent = new Intent(this, orderClaim.class);
+                intent = new Intent(this, OrderClaim.class);
                 startActivity(intent);
                 break;
             default:

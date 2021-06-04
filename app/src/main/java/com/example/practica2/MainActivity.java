@@ -10,14 +10,13 @@ import androidx.viewpager.widget.ViewPager;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.practica2.cart.ShoppingCart;
-import com.example.practica2.contact.contactOption;
-import com.example.practica2.contact.help;
-import com.example.practica2.contact.map;
+import com.example.practica2.contact.ContactOption;
+import com.example.practica2.contact.Help;
+import com.example.practica2.contact.Map;
 import com.example.practica2.pages.CategoriesPagesAdapter;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -108,15 +107,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
                 break;
             case R.id.navigation_help:
-                intent = new Intent(this, help.class);
+                intent = new Intent(this, Help.class);
                 startActivity(intent);
                 break;
             case R.id.navigation_contact:
-                intent = new Intent(this, contactOption.class);
+                intent = new Intent(this, ContactOption.class);
                 startActivity(intent);
                 break;
             case R.id.navigation_find_us:
-                intent = new Intent(this, map.class);
+                intent = new Intent(this, Map.class);
                 startActivity(intent);
                 break;
         }

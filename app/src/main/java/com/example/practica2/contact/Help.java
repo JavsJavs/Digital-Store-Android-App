@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.practica2.MainActivity;
 import com.example.practica2.R;
 
-public class help extends AppCompatActivity {
+public class Help extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

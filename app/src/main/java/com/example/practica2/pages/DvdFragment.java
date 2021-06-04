@@ -1,31 +1,21 @@
 package com.example.practica2.pages;
 
-import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.ListFragment;
 
 import com.example.practica2.R;
 import com.example.practica2.database.FilmDataHelper;
-
-import java.util.Objects;
 
 public class DvdFragment extends ListFragment{
     public DvdFragment() {
@@ -77,22 +67,9 @@ public class DvdFragment extends ListFragment{
     public void onListItemClick(ListView l, View v, int position, long id) {
         Log.e("DvdFragment", "item clicked");
         super.onListItemClick(l, v, position, id);
-        Intent intent = new Intent(getActivity(), filmDetail.class);
-        SQLiteOpenHelper filmDbHelper = new FilmDataHelper(getContext());
+        Intent intent = new Intent(getActivity(), FilmDetail.class);
         try {
-            this.db = filmDbHelper.getReadableDatabase();
-            Log.e("DvdFragment", "1");
-            this.cursor = this.db.query("FILMS",
-                    new String[]{"_id"},
-                    null,
-                    null,
-                    null,
-                    null,
-                    null);
-            this.cursor.move(position + 1);
-            Log.e("DvdFragment", "2");
-            intent.putExtra("FilmId", cursor.getString(0));
-            Log.e("DvdFragment", "3");
+            intent.putExtra("FilmId", String.valueOf(id));
             startActivity(intent);
         } catch (Exception e) {
             Log.e("DvdFragment", "Exception");

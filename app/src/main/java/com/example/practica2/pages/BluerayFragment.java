@@ -1,14 +1,14 @@
 package com.example.practica2.pages;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 import androidx.annotation.NonNull;
@@ -22,11 +22,14 @@ public class BluerayFragment extends ListFragment {
         // Required empty public constructor
     }
 
+    private Cursor cursor;
+    private SQLiteDatabase db;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         FilmDataHelper filmDbHelper = new FilmDataHelper(getContext());
-        SQLiteDatabase db = filmDbHelper.getReadableDatabase();
-        Cursor cursor = db.query("FILMS",
+        this.db = filmDbHelper.getReadableDatabase();
+        this.cursor = db.query("FILMS",
                 new String[]{"_id", "NAME", "PRICE", "BOUGHT"},
                 "platform = ?",
                 new String[]{"blueray"},
@@ -43,5 +46,17 @@ public class BluerayFragment extends ListFragment {
                 0);
         setListAdapter(listAdapter);
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        Intent intent = new Intent(getActivity(), FilmDetail.class);
+        try {
+            intent.putExtra("FilmId", String.valueOf(id));
+            startActivity(intent);
+        } catch (Exception e) {
+            Log.e("BluerayFragment", "Exception");
+        }
     }
 }

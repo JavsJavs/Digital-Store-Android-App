@@ -89,7 +89,7 @@
         app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:srcCompat="@drawable/offer_white" />
+        app:srcCompat="@drawable/offer_on" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -101,6 +101,6 @@
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:srcCompat="@drawable/watch_white" />
+        app:srcCompat="@drawable/watch_on" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

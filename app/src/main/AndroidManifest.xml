@@ -20,14 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".contact.contactOption" />
-        <activity android:name=".contact.orderClaim" />
-        <activity android:name=".contact.request" />
-        <activity android:name=".contact.map" />
+        <activity android:name=".contact.ContactOption" />
+        <activity android:name=".contact.OrderClaim" />
+        <activity android:name=".contact.Request" />
+        <activity android:name=".contact.Map" />
         <activity android:name=".cart.ShoppingCart" />
-        <activity android:name=".contact.help" />
+        <activity android:name=".contact.Help" />
         <activity android:name=".cart.ProcessCart" />
-        <activity android:name=".pages.filmDetail"/>
+        <activity android:name=".pages.FilmDetail"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
