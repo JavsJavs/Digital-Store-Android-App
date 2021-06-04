@@ -22,14 +22,18 @@ public class OfferFragment extends ListFragment {
         // Required empty public constructor
     }
 
-    private Cursor cursor;
-    private SQLiteDatabase db;
+    private LayoutInflater inflater;
+    private ViewGroup container;
+    private Bundle savedInstanceState;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        this.inflater = inflater;
+        this.container = container;
+        this.savedInstanceState = savedInstanceState;
         FilmDataHelper filmDbHelper = new FilmDataHelper(getContext());
-        this.db = filmDbHelper.getReadableDatabase();
-        this.cursor = db.query("FILMS",
+        SQLiteDatabase db = filmDbHelper.getReadableDatabase();
+        Cursor cursor = db.query("FILMS",
                 new String[]{"_id", "NAME", "PRICE", "BOUGHT"},
                 "offer = ?",
                 new String[]{"1"},
@@ -51,6 +55,7 @@ public class OfferFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
+        this.onCreateView(this.inflater, this.container, this.savedInstanceState);
         Intent intent = new Intent(getActivity(), FilmDetail.class);
         try {
             intent.putExtra("FilmId", String.valueOf(id));

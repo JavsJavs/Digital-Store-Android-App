@@ -19,6 +19,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.practica2.R;
+import com.example.practica2.cart.ShoppingCart;
 import com.example.practica2.database.FilmDataHelper;
 
 public class FilmDetail extends AppCompatActivity {
@@ -93,6 +94,14 @@ public class FilmDetail extends AppCompatActivity {
             }
         });
         updateItemsBought();
+        Button cartButton = findViewById(R.id.itemDetailGoToCart);
+        cartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ShoppingCart.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -134,6 +143,7 @@ public class FilmDetail extends AppCompatActivity {
         }
         ((TextView) findViewById(R.id.itemDetailBought)).setText(String.valueOf(this.currentItems));
         updateTotalCost();
+        updateLists();
     }
 
     @SuppressLint("SetTextI18n")
@@ -150,5 +160,8 @@ public class FilmDetail extends AppCompatActivity {
             totalNumber.setText("");
             totalDollar.setText("");
         }
+    }
+
+    private void updateLists(){
     }
 }

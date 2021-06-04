@@ -189,6 +189,7 @@
         android:id="@+id/itemDetailBought"
         android:layout_width="90dp"
         android:layout_height="80dp"
+        android:layout_marginTop="16dp"
         android:background="@color/secondary_dark"
         android:gravity="center"
         android:text="@string/sample_number"
@@ -198,8 +199,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
-        app:layout_constraintVertical_bias="0.3
-" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/itemDetailRemove"
@@ -245,6 +245,7 @@
         app:layout_constraintTop_toBottomOf="@+id/itemDetailBought" />
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -257,15 +258,32 @@
             android:id="@+id/totalNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:text="@string/sample_number" />
+            android:text="@string/sample_number"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/totalDollar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:text="@string/dollar" />
+            android:text="@string/dollar"
+            android:textSize="24sp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/itemDetailGoToCart"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/secondary_light"
+        android:gravity="center"
+        android:text="@string/nd_cart"
+        android:textAlignment="center"
+        android:textColor="@color/primary_dark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:targetApi="lollipop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
