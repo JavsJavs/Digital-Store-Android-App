@@ -2,11 +2,9 @@ package com.example.practica2.pages;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,6 +20,7 @@ import com.example.practica2.database.FilmDataHelper;
 public class FilmDetail extends AppCompatActivity {
     private int currentItems;
     private int id;
+    private float price;
     private SQLiteDatabase db;
     private FilmDataHelper filmDbHelper;
 
@@ -42,6 +41,7 @@ public class FilmDetail extends AppCompatActivity {
             cursor.moveToFirst();
             ((TextView) findViewById(R.id.itemDetailTitle)).setText(cursor.getString(FilmDataHelper.filmTable.NAME));
             this.currentItems = cursor.getInt(FilmDataHelper.filmTable.BOUGHT);
+            this.price = cursor.getFloat(FilmDataHelper.filmTable.PRICE);
             ((TextView) findViewById(R.id.itemDetailDescription)).setText(cursor.getString(FilmDataHelper.filmTable.DESC));
             ((TextView) findViewById(R.id.itemDetailPrice)).setText(cursor.getString(FilmDataHelper.filmTable.PRICE));
             if (cursor.getString(FilmDataHelper.filmTable.PLATFORM).equals("dvd"))
@@ -118,6 +118,23 @@ public class FilmDetail extends AppCompatActivity {
 
     private void updateItemsBought(){
         ((TextView) findViewById(R.id.itemDetailBought)).setText(String.valueOf(this.currentItems));
+        updateTotalCost();
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void updateTotalCost(){
+        TextView totalText = findViewById(R.id.totalText);
+        TextView totalNumber = findViewById(R.id.totalNumber);
+        TextView totalDollar = findViewById(R.id.totalDollar);
+        if(this.currentItems > 0){
+            totalText.setText("Total");
+            totalNumber.setText(String.valueOf(this.price * this.currentItems));
+            totalDollar.setText("$");
+        }else{
+            totalText.setText("");
+            totalNumber.setText("");
+            totalDollar.setText("");
+        }
     }
 }
 /*db.execSQL("CREATE TABLE FILMS ("

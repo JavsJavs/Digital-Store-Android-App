@@ -197,7 +197,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
+        app:layout_constraintVertical_bias="0.3
+" />
 
     <Button
         android:id="@+id/itemDetailRemove"
@@ -230,4 +232,40 @@
         app:layout_constraintStart_toEndOf="@+id/itemDetailBought"
         app:layout_constraintTop_toTopOf="@+id/itemDetailBought"
         tools:targetApi="lollipop" />
+
+    <TextView
+        android:id="@+id/totalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Total"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/itemDetailBought"
+        app:layout_constraintStart_toStartOf="@+id/itemDetailBought"
+        app:layout_constraintTop_toBottomOf="@+id/itemDetailBought" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/totalText"
+        app:layout_constraintStart_toStartOf="@+id/totalText"
+        app:layout_constraintTop_toBottomOf="@+id/totalText">
+
+        <TextView
+            android:id="@+id/totalNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@string/sample_number" />
+
+        <TextView
+            android:id="@+id/totalDollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@string/dollar" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
